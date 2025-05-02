@@ -1,0 +1,655 @@
+{\rtf1\ansi\ansicpg950\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12720\viewh7240\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh-TW">\
+<head>\
+\'a0 \'a0 <meta charset="UTF-8">\
+\'a0 \'a0 <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+\'a0 \'a0 <title>B4 \uc0\u21934 \u23383 \u29255 \u35486 \u28204 \u39511 \u36938 \u25138 </title>\
+\'a0 \'a0 <script src="https://cdn.tailwindcss.com"></script>\
+\'a0 \'a0 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">\
+\'a0 \'a0 <style>\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u22522 \u26412 \u27171 \u24335 \u35373 \u23450  */\
+\'a0 \'a0 \'a0 \'a0 body \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 font-family: 'Inter', sans-serif; /* \uc0\u20351 \u29992  Inter \u23383 \u39636  */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u36984 \u38917 \u25353 \u37397 \u30340 \u25080 \u20572 \u21644 \u40670 \u25802 \u25928 \u26524  */\
+\'a0 \'a0 \'a0 \'a0 .option-button \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 transition: background-color 0.3s, transform 0.1s;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 .option-button:hover \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 transform: translateY(-2px); /* \uc0\u25080 \u20572 \u26178 \u31245 \u24494 \u19978 \u31227  */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u27491 \u30906 \u31572 \u26696 \u30340 \u37266 \u30446 \u27171 \u24335  */\
+\'a0 \'a0 \'a0 \'a0 .correct \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 background-color: #10b981 !important; /* \uc0\u32160 \u33394 \u32972 \u26223  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 color: white !important; /* \uc0\u30333 \u33394 \u25991 \u23383  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 border-color: #059669 !important; /* \uc0\u28145 \u32160 \u33394 \u37002 \u26694  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 animation: pulse-correct 0.5s; /* \uc0\u33032 \u34909 \u21205 \u30059  */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u37679 \u35492 \u31572 \u26696 \u30340 \u37266 \u30446 \u27171 \u24335  */\
+\'a0 \'a0 \'a0 \'a0 .incorrect \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 background-color: #f87171 !important; /* \uc0\u32005 \u33394 \u32972 \u26223  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 color: white !important; /* \uc0\u30333 \u33394 \u25991 \u23383  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 border-color: #ef4444 !important; /* \uc0\u28145 \u32005 \u33394 \u37002 \u26694  */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 animation: shake-incorrect 0.5s; /* \uc0\u25622 \u26179 \u21205 \u30059  */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u27491 \u30906 \u31572 \u26696 \u30340 \u33032 \u34909 \u21205 \u30059  */\
+\'a0 \'a0 \'a0 \'a0 @keyframes pulse-correct \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 0% \{ transform: scale(1); \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 50% \{ transform: scale(1.05); \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 100% \{ transform: scale(1); \}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u37679 \u35492 \u31572 \u26696 \u30340 \u25622 \u26179 \u21205 \u30059  */\
+\'a0 \'a0 \'a0 \'a0 @keyframes shake-incorrect \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 0%, 100% \{ transform: translateX(0); \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 25% \{ transform: translateX(-5px); \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 75% \{ transform: translateX(5px); \}\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u38577 \u34255 \u28414 \u21205 \u26781  (\u36969 \u29992 \u26044 \u32080 \u26524 \u21015 \u34920 ) */\
+\'a0 \'a0 \'a0 \'a0 .no-scrollbar::-webkit-scrollbar \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 display: none; /* Chrome, Safari, Opera */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 .no-scrollbar \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 -ms-overflow-style: none;\'a0 /* IE and Edge */\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 scrollbar-width: none;\'a0 /* Firefox */\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 /* \uc0\u30906 \u20445 \u25353 \u37397 \u25991 \u23383 \u22402 \u30452 \u23621 \u20013  */\
+\'a0 \'a0 \'a0 \'a0 .lesson-button, .option-button, #next-button, #restart-button \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0display: flex;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0align-items: center;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0justify-content: center;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0text-align: center;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 </style>\
+</head>\
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center min-h-screen p-4">\
+\'a0 \'a0 <div id="game-container" class="w-full max-w-2xl bg-white p-6 md:p-8 rounded-2xl shadow-xl transition-all duration-500">\
+\
+\'a0 \'a0 \'a0 \'a0 <div id="setup-screen">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">B4 \uc0\u21934 \u23383 \u29255 \u35486 \u28204 \u39511 \u36938 \u25138  \u55357 \u56538 </h1>\
+            <p class="text-sm text-center text-gray-600 mb-8">\uc0\u28204 \u39511 \u36938 \u25138 \u38283 \u30332 \u32773 \u65306 Gloria\u21555 \u31168 \u34349 \u32769 \u24107 \u65292 Google\u35469 \u35657 \u35611 \u24107 </p>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div class="mb-8">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <label class="block text-lg font-semibold text-gray-700 mb-3">1. \uc0\u36984 \u25799 \u28204 \u39511 \u39006 \u22411 \u65306 </label>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div class="flex flex-col sm:flex-row gap-4">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button id="type-eng-chi" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">\uc0\u33521 \u32763 \u20013 </button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button id="type-fill-blank" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">\uc0\u20363 \u21477 \u22635 \u31354 </button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <input type="hidden" id="selected-type" value="">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <label class="block text-lg font-semibold text-gray-700 mb-3">2. \uc0\u36984 \u25799 \u35506 \u27425 \u65306 </label>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="1" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 1</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="2" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 2</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="3" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 3</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="4" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 4</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="5" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 5</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button data-lesson="6" class="lesson-button bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">Lesson 6</button>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <p id="setup-error" class="text-red-500 text-center mt-6 font-semibold hidden">\uc0\u9888 \u65039  \u35531 \u20808 \u36984 \u25799 \u28204 \u39511 \u39006 \u22411 \u21644 \u35506 \u27425 \u65281 </p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 <div id="game-screen" class="hidden">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-2">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <h2 id="game-title" class="text-xl md:text-2xl font-bold text-gray-800 text-center sm:text-left">\uc0\u28204 \u39511 \u20013 ...</h2>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div class="text-lg font-semibold text-gray-700 bg-gray-100 px-4 py-2 rounded-lg shadow-sm">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <span id="question-counter">1 / 10</span> | \uc0\u55356 \u57286  Score: <span id="score">0</span>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div id="question-card" class="mb-6 p-6 rounded-lg text-center shadow-md min-h-[120px] flex flex-col justify-center items-center transition-colors duration-300">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0<p id="question-text" class="text-xl md:text-2xl font-semibold"></p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0<p id="sentence-context" class="text-md md:text-lg mt-2"></p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div id="feedback-container" class="mt-4 text-center h-8">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0<p id="feedback-text" class="text-lg font-semibold"></p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button id="next-button" class="mt-6 w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md hidden">\uc0\u19979 \u19968 \u38988  \u10145 \u65039 </button>\
+\'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 <div id="results-screen" class="hidden text-center">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">\uc0\u55356 \u57225  \u28204 \u39511 \u32080 \u26463 \u65281  \u55356 \u57225 </h2>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <p class="text-xl text-gray-700 mb-6">\uc0\u20320 \u30340 \u24471 \u20998 \u26159 \u65306 <span id="final-score" class="font-bold text-blue-600 text-2xl">0</span> / 10</p>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <h3 class="text-lg font-semibold text-gray-800 mb-3">\uc0\u26412 \u27425 \u28204 \u39511 \u38988 \u30446 \u33287 \u31572 \u26696 \u65306 </h3>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <div id="results-details" class="text-left bg-gray-50 p-4 rounded-lg max-h-60 overflow-y-auto no-scrollbar border border-gray-200 shadow-inner">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </div>\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <button id="restart-button" class="mt-8 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-200 ease-in-out shadow hover:shadow-md">\uc0\u55357 \u56580  \u20877 \u29609 \u19968 \u27425 </button>\
+\'a0 \'a0 \'a0 \'a0 </div>\
+\'a0 \'a0 </div>\
+\
+\'a0 \'a0 <script>\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u21934 \u23383 \u36039 \u26009  ---\
+\'a0 \'a0 \'a0 \'a0 // \uc0\u27880 \u24847 \u65306 \u36889 \u35041 \u30452 \u25509 \u23884 \u20837 \u20102 \u24744 \u25552 \u20379 \u30340 \u21934 \u23383 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 const vocabularyData = [\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "wonder", chinese: "\uc0\u22855 \u36447 ", sentence: "It\'92s a wonder that the man was rescued after he fell into the water." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "surgery", chinese: "\uc0\u25163 \u34899 ", sentence: "Dr. Liu has performed thousands of successful surgeries in her career." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "horror", chinese: "\uc0\u39514 \u24656 ", sentence: "Little Aaron watched in horror as the lightning flashed across the sky." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "limit", chinese: "\uc0\u38480 \u21046 ", sentence: "The tickets for this music festival will be limited to four per person." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "awful", chinese: "\uc0\u31967 \u31957 \u30340 ", sentence: "After the argument with his best friend, Greg felt awful." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "stare", chinese: "\uc0\u30447 \u33879 ", sentence: "My cat stared at her toy and played with it all afternoon." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "tease", chinese: "\uc0\u22066 \u24324 ", sentence: "Tim and his sister enjoy doing funny moves and teasing each other." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "overhear", chinese: "\uc0\u28961 \u24847 \u20013 \u32893 \u21040 ", sentence: "Eric overheard his girlfriend complain about him to her brother." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "principal", chinese: "\uc0\u26657 \u38263 ", sentence: "The principal has worked hard to create a good learning environment for all the students." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "hardly", chinese: "\uc0\u24190 \u20046 \u19981 ", sentence: "It was so noisy in the restaurant that Joe could hardly hear the waiter." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "friendship", chinese: "\uc0\u21451 \u35516 ", sentence: "George formed a close friendship with his new classmates after the field trip." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "bully", chinese: "\uc0\u24801 \u38712 ", sentence: "Ian saw the school bully beat up a boy, so he reported it to the teacher." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "ceremony", chinese: "\uc0\u20856 \u31150 ", sentence: "Kelly\'92s wedding ceremony was held in a beautiful small garden." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "observe", chinese: "\uc0\u35264 \u23519 \u21040 ", sentence: "Mina observed that Emily wore new shoes to school today." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "in public", chinese: "\uc0\u22312 \u20844 \u38283 \u22580 \u21512 ", sentence: "Playing phone videos loudly in public is rude and bothers others." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "get along", chinese: "\uc0\u30456 \u34389 \u34701 \u27965 ", sentence: "Mia and Wendy share many hobbies and get along very well." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "make fun of", chinese: "\uc0\u21462 \u31505 ", sentence: "Don\'92t make fun of others just because they behave in a different way." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "at least", chinese: "\uc0\u33267 \u23569 ", sentence: "After the surgery, Grandpa must rest for at least two weeks to fully recover." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "get away", chinese: "\uc0\u36867 \u38626 ", sentence: "Lisa often listens to music to get away from her daily routine." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 1, english: "no big deal", chinese: "\uc0\u27794 \u20160 \u40636 \u22823 \u19981 \u20102 ", sentence: "Losing one game is no big deal as long as you tried your best." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "aware", chinese: "\uc0\u23519 \u35258 \u21040 ", sentence: "Teenagers have to be aware of the risks of Internet usage." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "upper", chinese: "\uc0\u19978 \u27969 \u30340 \u65307 \u19978 \u23652 \u30340 ", sentence: "In early England, people from the upper class usually wore clothes with patterns and jewels." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "spread", chinese: "\uc0\u20659 \u38283 \u65307 \u25844 \u25955 ", sentence: "Panic spread rapidly among the crowd after a gunshot rang out." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "throughout", chinese: "\uc0\u36941 \u21450 ", sentence: "Taylor Swift\'92s music is very popular throughout the world." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "society", chinese: "\uc0\u31038 \u26371 ", sentence: "Raising public awareness about cultural differences can help make society better." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "serve", chinese: "\uc0\u20379 \u25033 \u39184 \u39135 ", sentence: "Paul was pleased when his father served a delicious pie to the family." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "industrial", chinese: "\uc0\u24037 \u26989 \u30340 ", sentence: "Due to climate change, industrial development has changed its focus toward green energy." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "impossible", chinese: "\uc0\u19981 \u21487 \u33021 \u30340 ", sentence: "It\'92s impossible for Erin to get to work on time because of a flat tire." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "starve", chinese: "\uc0\u25384 \u39187 ", sentence: "It is a sad fact that many people in the world still starve to death." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "immediately", chinese: "\uc0\u31435 \u21051 ", sentence: "The children put up their umbrellas immediately after it started raining." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "research", chinese: "\uc0\u30740 \u31350 ", sentence: "Research shows that people who exercise are happier and live longer." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "indicate", chinese: "\uc0\u39023 \u31034 ", sentence: "Recent research indicates that some plants can improve indoor air quality." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "fundamental", chinese: "\uc0\u22522 \u26412 \u30340 ", sentence: "Every human being has a fundamental need for love and belonging." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "common", chinese: "\uc0\u24120 \u35211 \u30340 ", sentence: "It\'92s common for people to have dogs or cats as pets." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "hear of", chinese: "\uc0\u32893 \u35498 \u36942 ", sentence: "There are many interesting traditions and customs that most people have never heard of." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "ask for", chinese: "\uc0\u35201 \u27714 ", sentence: "You can ask for a take-out box if you can\'92t finish your meal." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "by comparison", chinese: "\uc0\u30456 \u36611 \u20043 \u19979 ", sentence: "It is expensive to live in the city, but by comparison, it\'92s quite cheap to live in the countryside." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 2, english: "on average", chinese: "\uc0\u24179 \u22343 ", sentence: "On average, people spend about three hours per day on their smartphones." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "technology", chinese: "\uc0\u31185 \u25216 ", sentence: "With the rapid development of medical technology, people can live longer." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "establish", chinese: "\uc0\u21109 \u31435 ", sentence: "This new restaurant was established by a young couple." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "worth", chinese: "\uc0\u20540 \u24471 \u30340 ", sentence: "Spending time learning to cook is worth it for the delicious meals you can make." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "conference", chinese: "\uc0\u26371 \u35696 ", sentence: "Experts from many countries attended this conference on climate change." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "present", chinese: "\uc0\u25552 \u20986 ", sentence: "Judy presented her idea to the team in the meeting." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "increasingly", chinese: "\uc0\u26356 \u21152 \u22320 ", sentence: "Nowadays, it is increasingly common for people to shop online." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "worldwide", chinese: "\uc0\u20840 \u19990 \u30028 \u22320 ", sentence: "This app is popular everywhere and has over 100 million users worldwide." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "numerous", chinese: "\uc0\u35377 \u22810 \u30340 ", sentence: "Numerous birds visit the feeder in the garden every day." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "celebrity", chinese: "\uc0\u21517 \u20154 ", sentence: "Many celebrities attended the film festival to promote their latest movies." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "audience", chinese: "\uc0\u35264 \u30526 ", sentence: "The audience waited eagerly in their seats for the show to start." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "reveal", chinese: "\uc0\u36879 \u38706 ", sentence: "Bruce decided to reveal a secret to his best friend." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "eventually", chinese: "\uc0\u26368 \u32066 ", sentence: "Vivian kept practicing and eventually learned how to ice skate." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "demand", chinese: "\uc0\u35201 \u27714 ", sentence: "Mrs. Jones demanded that her students remain quiet during the exam." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "control", chinese: "\uc0\u25511 \u21046 ", sentence: "The pilot skillfully controlled the airplane as it landed on the runway." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "deadly", chinese: "\uc0\u33268 \u21629 \u30340 ", sentence: "Researchers are working to find a cure for this deadly disease." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "a series of", chinese: "\uc0\u19968 \u31995 \u21015 \u30340 ", sentence: "Our national day will be celebrated with a series of parades and fireworks." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "stand for", chinese: "\uc0\u20195 \u34920 ", sentence: "WHO, which stands for World Health Organization, was established in 1948." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "free of charge", chinese: "\uc0\u20813 \u36027 \u22320 ", sentence: "This useful app can be downloaded free of charge online." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "far and wide", chinese: "\uc0\u21040 \u34389 ", sentence: "The company sells its products far and wide, reaching international markets." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 3, english: "give it a try", chinese: "\uc0\u35430 \u35430 \u30475 ", sentence: "Melissa encouraged her friend to give it a try and apply for the job." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "dare", chinese: "\uc0\u25954 \u26044 ", sentence: "Not many people dare to try extreme sports like rock climbing." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "urge", chinese: "\uc0\u21147 \u21240 ", sentence: "Dr. Chin urged her patient to get into a habit of regular exercise." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "discuss", chinese: "\uc0\u35342 \u35542 ", sentence: "Annie is discussing plans for a trip to Japan with Megan." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "reserve", chinese: "\uc0\u20445 \u30041 \u65307 \u38928 \u35330 ", sentence: "These tables are reserved for our VIP customers tonight." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "equality", chinese: "\uc0\u24179 \u31561 ", sentence: "Taiwan allowed same-sex couples to get married in 2019, achieving marriage equality." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "female", chinese: "\uc0\u22899 \u24615 \u30340 ", sentence: "NewJeans and (G)I-DLE are among the most popular female K-pop groups." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "annoy", chinese: "\uc0\u24825 \u24817 ", sentence: "Amanda is very annoyed by drivers who do not use turn signals." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "threaten", chinese: "\uc0\u23041 \u33029 ", sentence: "The angry customer threatened to complain to the manager." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "survive", chinese: "\uc0\u20502 \u23384 ", sentence: "There was a terrible accident this morning, but luckily the driver survived." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "attract", chinese: "\uc0\u21560 \u24341 ", sentence: "The glowing sign attracted the attention of everyone on the street." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "statement", chinese: "\uc0\u32882 \u26126 ", sentence: "The celebrity made a statement on social media to support freedom of speech." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "persuade", chinese: "\uc0\u35498 \u26381 ", sentence: "My sister and I tried hard to persuade our father to quit smoking." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "government", chinese: "\uc0\u25919 \u24220 ", sentence: "The government manages public services like schools, hospitals, and libraries." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "deliver", chinese: "\uc0\u30332 \u34920 \u65307 \u36939 \u36865 ", sentence: "Mike has prepared for several weeks to deliver his speech with confidence. \u9679  Fresh dairy products are delivered to the supermarket every day." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "weapon", chinese: "\uc0\u27494 \u22120 ", sentence: "Players can freely trade weapons with one another in this game." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "can\'92t help but", chinese: "\uc0\u19981 \u30001 \u33258 \u20027 \u22320 \'85\'85", sentence: "After seeing the touching end of the movie, we couldn\'92t help but cry." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "come under", chinese: "\uc0\u21463 \u21040 ", sentence: "The city has come under attack during the war." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "from then on", chinese: "\uc0\u33258 \u37027 \u26178 \u36215 ", sentence: "Willy and Emma met in high school, and from then on, they have been together." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "take (...) away", chinese: "\uc0\u25343 \u36208 ", sentence: "The disease took away Isaac\'92s ability to walk, leaving him to rely on a wheelchair." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 4, english: "call for", chinese: "\uc0\u21628 \u31858 ", sentence: "Many female workers gathered to call for equal pay for equal work." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "captain", chinese: "\uc0\u27231 \u38263 \u65307 \u38538 \u38263 ", sentence: "After years of effort, Carol finally achieved her dream of becoming a captain." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "shortly", chinese: "\uc0\u19981 \u20037 ", sentence: "Jackson has to board immediately since his flight is taking off shortly." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "fault", chinese: "\uc0\u36942 \u37679 ", sentence: "David thought it was his fault for not scoring the goal and thus losing the game." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "pressure", chinese: "\uc0\u22739 \u21147 ", sentence: "Miranda is under pressure to finish all her work by the end of the day." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "decrease", chinese: "\uc0\u38477 \u20302 ", sentence: "Research shows that the number of people speaking the local language is decreasing rapidly." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "sensitive", chinese: "\uc0\u25935 \u24863 \u30340 ", sentence: "Maddie is sensitive to her friends\'92 emotions when they feel down." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "similarly", chinese: "\uc0\u21516 \u27171 \u22320 ", sentence: "Both laptops and tablets are suitable for work, and similarly, they can be used for entertainment." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "enable", chinese: "\uc0\u20351 \u33021 \u22816 ", sentence: "Kevin\'92s part-time job enabled him to complete his education." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "distinguish", chinese: "\uc0\u36776 \u21029 ", sentence: "It\'92s important as a reader to distinguish between real and fake news." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "function", chinese: "\uc0\u36939 \u20316 ", sentence: "After being checked and fixed, the air conditioner finally functioned normally." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "moreover", chinese: "\uc0\u27492 \u22806 ", sentence: "Dr. Chen explained the treatment process clearly; moreover, she eased the patient\'92s worries." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "condition", chinese: "\uc0\u24773 \u27841 ", sentence: "We moved to a bigger apartment to improve our living conditions." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "affect", chinese: "\uc0\u24433 \u38911 ", sentence: "Global warming not only affects people\'92s health, but also harms animals." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "propose", chinese: "\uc0\u25552 \u35696 ", sentence: "Jared proposed that we make our own meal instead of eating out." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "offer", chinese: "\uc0\u25552 \u20379 ", sentence: "The company offered some training opportunities to the students of this school." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "pleasant", chinese: "\uc0\u24841 \u24555 \u30340 ", sentence: "It was pleasant to have a picnic in the warm sunlight." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "keep in mind", chinese: "\uc0\u35352 \u20303 ", sentence: "Keep in mind the importance of being on time for a job interview." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "needless to say", chinese: "\uc0\u19981 \u29992 \u35498 ", sentence: "Needless to say, all countries should work together to deal with climate change." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "for a start", chinese: "\uc0\u39318 \u20808 ", sentence: "To improve your health, for a start, try consuming more vegetables." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "in comparison with", chinese: "\uc0\u21644 \'85\'85\u30456 \u27604 ", sentence: "In comparison with Europeans, Taiwanese people work longer hours on average." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "regardless of", chinese: "\uc0\u28961 \u35542 ", sentence: "Regardless of what people were saying, Billy decided to open his own shop." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 5, english: "look forward to", chinese: "\uc0\u26399 \u30460 ", sentence: "Little Chris was looking forward to seeing Santa Claus on Christmas Eve." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "afford", chinese: "\uc0\u36000 \u25812 \u24471 \u36215 ", sentence: "Blair can\'92t afford to buy a new house on his salary." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "fate", chinese: "\uc0\u22825 \u24847 ", sentence: "It must have been fate that we met that day in the caf\'e9." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "pursue", chinese: "\uc0\u36861 \u27714 ", sentence: "Some people pursue a career in social work because they want to help others." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "fortune", chinese: "\uc0\u36939 \u27683 \u65307 \u22823 \u31558 \u37666 \u36001 ", sentence: "Tim had the good fortune to win the biggest prize at the year-end party. \u9679  Sophia has worked hard for several years and has made a fortune." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "devote", chinese: "\uc0\u22857 \u29563 ", sentence: "Patricia devotes a lot of time to raising road safety awareness." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "passion", chinese: "\uc0\u29105 \u24773 ", sentence: "Tucker has had a passion for baking since childhood." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "cruel", chinese: "\uc0\u27544 \u37239 \u30340 ", sentence: "Losing a loved one is cruel for anyone, and the pain may take years to heal." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "suffer", chinese: "\uc0\u21463 \u33510 ", sentence: "Ray had suffered from back pain, but it went away after he started exercising." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "sacrifice", chinese: "\uc0\u29351 \u29298 ", sentence: "Soldiers are willing to make sacrifices to protect their country and its people." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "graduate", chinese: "\uc0\u30050 \u26989 ", sentence: "Josh joined the military soon after he graduated from college." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "labor", chinese: "\uc0\u21214 \u21147 ", sentence: "Few people can bear hours of labor under the sun every day." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "weaken", chinese: "\uc0\u28187 \u24369 ", sentence: "This old machine\'92s engine has been weakened by many years of use." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "barely", chinese: "\uc0\u24190 \u20046 \u19981 ", sentence: "Bella could barely stay awake after spending the night searching for her cat." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "symbol", chinese: "\uc0\u35937 \u24501 ", sentence: "The scales are a symbol of fairness and equality in the legal system." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "take a break", chinese: "\uc0\u20241 \u24687 \u19968 \u19979 ", sentence: "It\'92s important to take a break every hour while working." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "in vain", chinese: "\uc0\u30333 \u36027 \u65307 \u24466 \u21214 ", sentence: "The warning system was not introduced in vain; it has saved many lives." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "make a name for oneself", chinese: "\uc0\u25104 \u21517 ", sentence: "Leo made a name for himself by winning an award for his work on stage." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "in sb.\'92s honor", chinese: "\uc0\u21521 \u26576 \u20154 \u33268 \u24847 ", sentence: "The ceremony was held in honor of the newly elected president." \},\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \{ lesson: 6, english: "lay down", chinese: "\uc0\u25918 \u19979 ", sentence: "Ken laid down his baby very gently, trying not to wake him up." \}\
+\'a0 \'a0 \'a0 \'a0 ];\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u36039 \u26009 \u38928 \u34389 \u29702  ---\
+\'a0 \'a0 \'a0 \'a0 vocabularyData.forEach(item => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u28165 \u29702 \u21477 \u39318 \u30340  '\u9679  '\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (item.sentence && item.sentence.startsWith('\uc0\u9679  ')) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 item.sentence = item.sentence.substring(2).trim();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u34389 \u29702 \u21253 \u21547  '\u9679 ' \u20998 \u38548 \u30340 \u22810 \u20491 \u20363 \u21477  (\u20363 \u22914  'deliver', 'fortune')\u65292 \u21482 \u21462 \u31532 \u19968 \u20491 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (item.sentence && item.sentence.includes('\uc0\u9679 ')) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 item.sentence = item.sentence.split('\uc0\u9679 ')[0].trim();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u31227 \u38500 \u20013 \u25991 \u32763 \u35695 \u20013 \u21487 \u33021 \u21253 \u21547 \u30340 \u38989 \u22806 \u35498 \u26126  (\u20363 \u22914  '\u36939 \u27683 \u65307 \u22823 \u31558 \u37666 \u36001 ' -> '\u36939 \u27683 ') - \u21487 \u36984 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0if (item.chinese && item.chinese.includes('\uc0\u65307 ')) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0item.chinese = item.chinese.split('\uc0\u65307 ')[0].trim();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// \uc0\u34389 \u29702 \u29255 \u35486 \u20013 \u30340 \u25324 \u34399  (\u20363 \u22914  'take (...) away' -> 'take away')\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0if (item.english && item.english.includes('(...)')) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0item.english = item.english.replace('(...)', '').replace(/\\s+/g, ' ').trim();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0if (item.english && item.english.includes('sb.\'92s')) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 item.english = item.english.replace('sb.\'92s', 'one\\'s').replace(/\\s+/g, ' ').trim(); // Replace sb.'s with one's\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\
+\'a0 \'a0 \'a0 \'a0 // --- DOM \uc0\u20803 \u32032 \u29554 \u21462  ---\
+\'a0 \'a0 \'a0 \'a0 const setupScreen = document.getElementById('setup-screen');\
+\'a0 \'a0 \'a0 \'a0 const gameScreen = document.getElementById('game-screen');\
+\'a0 \'a0 \'a0 \'a0 const resultsScreen = document.getElementById('results-screen');\
+\'a0 \'a0 \'a0 \'a0 const typeEngChiButton = document.getElementById('type-eng-chi');\
+\'a0 \'a0 \'a0 \'a0 const typeFillBlankButton = document.getElementById('type-fill-blank');\
+\'a0 \'a0 \'a0 \'a0 const selectedTypeInput = document.getElementById('selected-type');\
+\'a0 \'a0 \'a0 \'a0 const lessonButtons = document.querySelectorAll('.lesson-button');\
+\'a0 \'a0 \'a0 \'a0 const gameTitle = document.getElementById('game-title');\
+\'a0 \'a0 \'a0 \'a0 const questionCounter = document.getElementById('question-counter');\
+\'a0 \'a0 \'a0 \'a0 const scoreDisplay = document.getElementById('score');\
+\'a0 \'a0 \'a0 \'a0 const questionCard = document.getElementById('question-card');\
+\'a0 \'a0 \'a0 \'a0 const questionText = document.getElementById('question-text');\
+\'a0 \'a0 \'a0 \'a0 const sentenceContext = document.getElementById('sentence-context'); // \uc0\u29992 \u26044 \u22635 \u31354 \u38988 \u30340 \u21477 \u23376 \u19978 \u19979 \u25991 \
+\'a0 \'a0 \'a0 \'a0 const optionsContainer = document.getElementById('options-container');\
+\'a0 \'a0 \'a0 \'a0 const feedbackContainer = document.getElementById('feedback-container');\
+\'a0 \'a0 \'a0 \'a0 const feedbackText = document.getElementById('feedback-text');\
+\'a0 \'a0 \'a0 \'a0 const nextButton = document.getElementById('next-button');\
+\'a0 \'a0 \'a0 \'a0 const finalScore = document.getElementById('final-score');\
+\'a0 \'a0 \'a0 \'a0 const resultsDetails = document.getElementById('results-details');\
+\'a0 \'a0 \'a0 \'a0 const restartButton = document.getElementById('restart-button');\
+\'a0 \'a0 \'a0 \'a0 const setupError = document.getElementById('setup-error');\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u36938 \u25138 \u29376 \u24907 \u35722 \u25976  ---\
+\'a0 \'a0 \'a0 \'a0 let currentLessonData = []; // \uc0\u30070 \u21069 \u35506 \u27425 \u30340 \u21934 \u23383 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 let currentQuestions = []; // \uc0\u30070 \u21069 \u28204 \u39511 \u30340 10\u20491 \u21839 \u38988 \
+\'a0 \'a0 \'a0 \'a0 let currentQuestionIndex = 0; // \uc0\u30070 \u21069 \u21839 \u38988 \u32034 \u24341 \
+\'a0 \'a0 \'a0 \'a0 let score = 0; // \uc0\u30070 \u21069 \u24471 \u20998 \
+\'a0 \'a0 \'a0 \'a0 let gameType = ''; // \uc0\u36938 \u25138 \u39006 \u22411  ('eng-chi' or 'fill-blank')\
+\'a0 \'a0 \'a0 \'a0 let selectedLesson = 0; // \uc0\u36984 \u25799 \u30340 \u35506 \u27425 \
+\'a0 \'a0 \'a0 \'a0 let resultsLog = []; // \uc0\u35352 \u37636 \u27599 \u27425 \u28204 \u39511 \u32080 \u26524  \{ questionData, userAnswer, isCorrect \}\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u24037 \u20855 \u20989 \u25976  ---\
+\'a0 \'a0 \'a0 \'a0 /**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u25171 \u20098 \u38499 \u21015 \u38918 \u24207  (Fisher-Yates Algorithm)\
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{Array\} array - \uc0\u35201 \u25171 \u20098 \u30340 \u38499 \u21015 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @returns \{Array\} \uc0\u25171 \u20098 \u24460 \u30340 \u38499 \u21015 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 function shuffleArray(array) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 for (let i = array.length - 1; i > 0; i--) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const j = Math.floor(Math.random() * (i + 1));\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 [array[i], array[j]] = [array[j], array[i]];\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return array;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0/**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u28858 \u22635 \u31354 \u38988 \u21109 \u24314 \u24118 \u26377 \u31354 \u26684 \u30340 \u21477 \u23376 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{string\} sentence - \uc0\u21407 \u22987 \u20363 \u21477 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{string\} targetWord - \uc0\u35201 \u26367 \u25563 \u25104 \u31354 \u26684 \u30340 \u21934 \u23383 /\u29255 \u35486 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @returns \{string\} \uc0\u26367 \u25563 \u24460 \u30340 \u21477 \u23376 \u65292 \u22914 \u26524 \u28961 \u27861 \u21487 \u38752 \u26367 \u25563 \u21063 \u36820 \u22238 \u25509 \u36817 \u21407 \u22987 \u30340 \u21477 \u23376 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0function createFillInBlankSentence(sentence, targetWord) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const blank = '_______';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Create a regex that matches the exact word/phrase with word boundaries, case-insensitive.\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Escape special characters in the target word.\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const escapedWord = targetWord.replace(/[-\\/\\\\^$*+?.()|[\\]\{\}]/g, '\\\\$&');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Use word boundaries (\\b) to ensure we match whole words only.\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const regex = new RegExp(`\\\\b$\{escapedWord\}\\\\b`, 'gi');\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Attempt to replace only the first occurrence to avoid issues with repeated words\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let replacedSentence = sentence.replace(regex, blank);\
+\
+            // If the exact match didn't work, try a slightly less strict approach\
+            // This part might need further refinement based on specific edge cases in your data\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (!replacedSentence.includes(blank)) \{\
+                // Fallback: Try replacing the first occurrence of the word string,\
+                // which might be necessary for phrases or words with punctuation attached.\
+                // This is less safe than \\b but might catch some missed cases.\
+                const looseRegex = new RegExp(escapedWord, 'gi');\
+                replacedSentence = sentence.replace(looseRegex, blank);\
+            \}\
+\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // If still no blank, log a warning and return the original sentence (or modified)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (!replacedSentence.includes(blank)) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0console.warn(`\uc0\u28961 \u27861 \u28858  "$\{targetWord\}" \u22312 \u21477 \u23376  "$\{sentence\}" \u20013 \u21487 \u38752 \u22320 \u21109 \u24314 \u31354 \u26684 \u12290 `);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// Return the original sentence, maybe highlighting the target word\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0return sentence.replace(targetWord, `**$\{targetWord\}**`); // Highlight target word\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return replacedSentence;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u35373 \u23450 \u30059 \u38754 \u37007 \u36655  ---\
+\'a0 \'a0 \'a0 \'a0 // \uc0\u36984 \u25799  "\u33521 \u32763 \u20013 "\
+\'a0 \'a0 \'a0 \'a0 typeEngChiButton.addEventListener('click', () => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 selectedTypeInput.value = 'eng-chi';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u28155 \u21152 \u35222 \u35258 \u25552 \u31034 \u65292 \u34920 \u31034 \u25353 \u37397 \u34987 \u36984 \u20013 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 typeEngChiButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 typeFillBlankButton.classList.remove('ring-2', 'ring-offset-2', 'ring-green-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 setupError.classList.add('hidden'); // \uc0\u38577 \u34255 \u37679 \u35492 \u35338 \u24687 \
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 \'a0 \'a0 // \uc0\u36984 \u25799  "\u20363 \u21477 \u22635 \u31354 "\
+\'a0 \'a0 \'a0 \'a0 typeFillBlankButton.addEventListener('click', () => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 selectedTypeInput.value = 'fill-blank';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u28155 \u21152 \u35222 \u35258 \u25552 \u31034 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 typeFillBlankButton.classList.add('ring-2', 'ring-offset-2', 'ring-green-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 typeEngChiButton.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0setupError.classList.add('hidden'); // \uc0\u38577 \u34255 \u37679 \u35492 \u35338 \u24687 \
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 \'a0 \'a0 // \uc0\u36984 \u25799 \u35506 \u27425 \u20006 \u38283 \u22987 \u36938 \u25138 \
+\'a0 \'a0 \'a0 \'a0 lessonButtons.forEach(button => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 button.addEventListener('click', () => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 gameType = selectedTypeInput.value; // \uc0\u29554 \u21462 \u36984 \u25799 \u30340 \u36938 \u25138 \u39006 \u22411 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 selectedLesson = parseInt(button.dataset.lesson); // \uc0\u29554 \u21462 \u36984 \u25799 \u30340 \u35506 \u27425 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u27298 \u26597 \u26159 \u21542 \u24050 \u36984 \u25799 \u36938 \u25138 \u39006 \u22411 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (!gameType) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0setupError.textContent = '\uc0\u9888 \u65039  \u35531 \u20808 \u36984 \u25799 \u28204 \u39511 \u39006 \u22411 \u65281 ';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0setupError.classList.remove('hidden'); // \uc0\u39023 \u31034 \u37679 \u35492 \u35338 \u24687 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0setupError.classList.add('hidden'); // \uc0\u38577 \u34255 \u37679 \u35492 \u35338 \u24687 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u26681 \u25818 \u36984 \u25799 \u30340 \u35506 \u27425 \u31721 \u36984 \u21934 \u23383 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 currentLessonData = vocabularyData.filter(item => item.lesson === selectedLesson);\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u27298 \u26597 \u35442 \u35506 \u27425 \u26159 \u21542 \u26377 \u36275 \u22816 \u30340 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (currentLessonData.length === 0) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 alert(`\uc0\u25265 \u27465 \u65292 \u30446 \u21069 \u27794 \u26377  Lesson $\{selectedLesson\} \u30340 \u21934 \u23383 \u36039 \u26009 \u12290 `);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// \uc0\u27298 \u26597 \u26159 \u21542 \u26377 \u36275 \u22816 \u30340 \u36984 \u38917 \u65288 \u33267 \u23569 \u38656 \u35201 4\u20491 \u19981 \u21516 \u30340 \u35422 \u24409 \u20358 \u29983 \u25104 \u36984 \u38917 \u65289 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0const uniqueOptionsKey = (gameType === 'eng-chi') ? 'chinese' : 'english';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0const uniqueOptions = new Set(currentLessonData.map(item => item[uniqueOptionsKey]));\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0if (uniqueOptions.size < 4) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0alert(`Lesson $\{selectedLesson\} \uc0\u30340 \u21934 \u23383 /\u29255 \u35486 \u25976 \u37327 \u19981 \u36275  ($\{uniqueOptions.size\} \u20491 )\u65292 \u28961 \u27861 \u29986 \u29983 \u21253 \u21547  4 \u20491 \u19981 \u21516 \u36984 \u38917 \u30340 \u38988 \u30446 \u12290 \u35531 \u36984 \u25799 \u20854 \u20182 \u35506 \u27425 \u12290 `);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0return;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0\}\
+\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u38283 \u22987 \u36938 \u25138 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 startGame();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \});\
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u36938 \u25138 \u26680 \u24515 \u37007 \u36655  ---\
+\'a0 \'a0 \'a0 \'a0 /**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u21021 \u22987 \u21270 \u20006 \u38283 \u22987 \u26032 \u19968 \u23616 \u36938 \u25138 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 function startGame() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u37325 \u32622 \u36938 \u25138 \u29376 \u24907 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 score = 0;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 currentQuestionIndex = 0;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsLog = [];\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 scoreDisplay.textContent = score;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.textContent = '';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 nextButton.classList.add('hidden');\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u24478 \u30070 \u21069 \u35506 \u27425 \u30340 \u25976 \u25818 \u20013 \u38568 \u27231 \u36984 \u21462  10 \u20491 \u21839 \u38988  (\u22914 \u26524 \u23569 \u26044 10\u20491 \u21063 \u20840 \u36984 )\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 currentQuestions = shuffleArray([...currentLessonData]).slice(0, 10);\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u20999 \u25563 \u39023 \u31034 \u30059 \u38754 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 setupScreen.classList.add('hidden');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsScreen.classList.add('hidden');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 gameScreen.classList.remove('hidden');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u35373 \u23450 \u36938 \u25138 \u27161 \u38988 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 gameTitle.textContent = `Lesson $\{selectedLesson\} - $\{gameType === 'eng-chi' ? '\uc0\u33521 \u32763 \u20013 ' : '\u20363 \u21477 \u22635 \u31354 '\}`;\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u36617 \u20837 \u31532 \u19968 \u20491 \u21839 \u38988 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 loadQuestion();\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 /**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u36617 \u20837 \u20006 \u39023 \u31034 \u30070 \u21069 \u21839 \u38988 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 function loadQuestion() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u28165 \u38500 \u19978 \u19968 \u38988 \u30340 \u22238 \u39243 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.textContent = '';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.className = 'text-lg font-semibold'; // \uc0\u37325 \u32622 \u22238 \u39243 \u25991 \u23383 \u27171 \u24335 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 nextButton.classList.add('hidden'); // \uc0\u38577 \u34255 \u19979 \u19968 \u38988 \u25353 \u37397 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 optionsContainer.innerHTML = ''; // \uc0\u28165 \u31354 \u36984 \u38917 \u23481 \u22120 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u27298 \u26597 \u26159 \u21542 \u25152 \u26377 \u21839 \u38988 \u37117 \u24050 \u22238 \u31572 \u23436 \u30050 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (currentQuestionIndex >= currentQuestions.length) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 endGame(); // \uc0\u32080 \u26463 \u36938 \u25138 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u29554 \u21462 \u30070 \u21069 \u21839 \u38988 \u30340 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const questionData = currentQuestions[currentQuestionIndex];\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u26356 \u26032 \u21839 \u38988 \u35336 \u25976 \u22120 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionCounter.textContent = `$\{currentQuestionIndex + 1\} / $\{currentQuestions.length\}`;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 sentenceContext.textContent = ''; // \uc0\u28165 \u31354 \u21477 \u23376 \u19978 \u19979 \u25991 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let questionPrompt = ''; // \uc0\u21839 \u38988 \u25552 \u31034 \u25991 \u23383  (\u33521 \u25991 \u21934 \u23383 \u25110 \u22635 \u31354 \u25552 \u31034 )\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let correctAnswer = ''; // \uc0\u27491 \u30906 \u31572 \u26696  (\u20013 \u25991 \u32763 \u35695 \u25110 \u33521 \u25991 \u21934 \u23383 )\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let options = []; // \uc0\u36984 \u38917 \u21015 \u34920 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u26681 \u25818 \u36938 \u25138 \u39006 \u22411 \u28310 \u20633 \u21839 \u38988 \u21644 \u36984 \u38917 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (gameType === 'eng-chi') \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionPrompt = questionData.english;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 correctAnswer = questionData.chinese;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u29983 \u25104 \u36984 \u38917  (1\u20491 \u27491 \u30906 \u31572 \u26696  + 3\u20491 \u37679 \u35492 \u31572 \u26696 )\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 options = generateOptions(currentLessonData, questionData, 'chinese');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionText.textContent = questionPrompt; // \uc0\u39023 \u31034 \u33521 \u25991 \u21934 \u23383 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u35373 \u23450 \u21839 \u38988 \u21345 \u29255 \u27171 \u24335 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionCard.className = 'mb-6 p-6 rounded-lg text-center shadow-md min-h-[120px] flex flex-col justify-center items-center transition-colors duration-300 bg-blue-100 text-blue-800';\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \} else \{ // fill-blank (\uc0\u20363 \u21477 \u22635 \u31354 )\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Create sentence with blank\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionPrompt = createFillInBlankSentence(questionData.sentence, questionData.english);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 correctAnswer = questionData.english;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Generate options (1 correct + 3 incorrect)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 options = generateOptions(currentLessonData, questionData, 'english');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionText.textContent = `\uc0\u22635 \u20837 \u31354 \u26684 \u65306 `; // Display prompt\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 sentenceContext.textContent = `"$\{questionPrompt\}"`; // Display sentence with blank\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Set question card style\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionCard.className = 'mb-6 p-6 rounded-lg text-center shadow-md min-h-[120px] flex flex-col justify-center items-center transition-colors duration-300 bg-sky-100 text-sky-800';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u25171 \u20098 \u36984 \u38917 \u38918 \u24207 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 options = shuffleArray(options);\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u21109 \u24314 \u20006 \u39023 \u31034 \u36984 \u38917 \u25353 \u37397 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 options.forEach(option => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const button = document.createElement('button');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 button.textContent = option;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u35373 \u23450 \u36984 \u38917 \u25353 \u37397 \u27171 \u24335 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 button.classList.add('option-button', 'bg-white', 'hover:bg-gray-100', 'text-gray-800', 'font-semibold', 'py-3', 'px-4', 'border', 'border-gray-300', 'rounded-lg', 'shadow', 'transition', 'duration-200', 'ease-in-out', 'w-full', 'min-h-[60px]'); // \uc0\u28155 \u21152  min-h-[60px] \u30906 \u20445 \u39640 \u24230 \u19968 \u33268 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u32129 \u23450 \u40670 \u25802 \u20107 \u20214 \u34389 \u29702 \u20989 \u25976 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 button.addEventListener('click', () => handleAnswer(option === correctAnswer, button, correctAnswer));\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 optionsContainer.appendChild(button);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \});\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0/**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u29983 \u25104 \u21253 \u21547 \u19968 \u20491 \u27491 \u30906 \u31572 \u26696 \u21644 \u22810 \u20491 \u37679 \u35492 \u31572 \u26696 \u30340 \u36984 \u38917 \u21015 \u34920 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{Array\} lessonData - \uc0\u30070 \u21069 \u35506 \u27425 \u30340 \u25152 \u26377 \u21934 \u23383 \u25976 \u25818 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{object\} currentItem - \uc0\u30070 \u21069 \u21839 \u38988 \u30340 \u25976 \u25818 \u23565 \u35937 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{string\} key - \uc0\u35201 \u25552 \u21462 \u30340 \u36984 \u38917 \u37749 \u21517  ('chinese' or 'english')\
+\'a0 \'a0 \'a0 \'a0 \'a0* @returns \{Array\} \uc0\u21253 \u21547 4\u20491 \u36984 \u38917 \u30340 \u38499 \u21015 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 \'a0function generateOptions(lessonData, currentItem, key) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const correctAnswer = currentItem[key];\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let options = [correctAnswer]; // \uc0\u39318 \u20808 \u21152 \u20837 \u27491 \u30906 \u31572 \u26696 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u24478 \u35506 \u27425 \u25976 \u25818 \u20013 \u31721 \u36984 \u20986 \u19981 \u21253 \u21547 \u27491 \u30906 \u31572 \u26696 \u30340 \u20854 \u20182 \u38917 \u30446 \u20316 \u28858 \u37679 \u35492 \u36984 \u38917 \u20358 \u28304 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const potentialIncorrects = lessonData.filter(item => item[key] !== correctAnswer);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const shuffledIncorrects = shuffleArray(potentialIncorrects); // \uc0\u25171 \u20098 \u37679 \u35492 \u36984 \u38917 \u20358 \u28304 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u24478 \u25171 \u20098 \u24460 \u30340 \u37679 \u35492 \u36984 \u38917 \u20013 \u36984 \u21462 \u65292 \u30452 \u21040 \u36984 \u38917 \u32317 \u25976 \u36948 \u21040  4 \u20491 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 for (let i = 0; options.length < 4 && i < shuffledIncorrects.length; i++) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u30906 \u20445 \u19981 \u37325 \u35079 \u28155 \u21152 \u36984 \u38917 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (!options.includes(shuffledIncorrects[i][key])) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 options.push(shuffledIncorrects[i][key]);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u29702 \u35542 \u19978 \u65292 \u22240 \u28858 \u21069 \u38754 \u24050 \u27298 \u26597  uniqueOptions.size >= 4\u65292 \u36889 \u35041 \u32317 \u33021 \u25214 \u21040 \u36275 \u22816 \u30340 \u36984 \u38917 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return options;\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 /**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u34389 \u29702 \u29992 \u25142 \u30340 \u31572 \u26696 \u36984 \u25799 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{boolean\} isCorrect - \uc0\u31572 \u26696 \u26159 \u21542 \u27491 \u30906 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{HTMLElement\} clickedButton - \uc0\u34987 \u40670 \u25802 \u30340 \u25353 \u37397 \u20803 \u32032 \
+\'a0 \'a0 \'a0 \'a0 \'a0* @param \{string\} correctAnswerText - \uc0\u27491 \u30906 \u31572 \u26696 \u30340 \u25991 \u23383 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 function handleAnswer(isCorrect, clickedButton, correctAnswerText) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u31105 \u29992 \u25152 \u26377 \u36984 \u38917 \u25353 \u37397 \u65292 \u38450 \u27490 \u37325 \u35079 \u40670 \u25802 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const buttons = optionsContainer.querySelectorAll('button');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 buttons.forEach(button => button.disabled = true);\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const questionData = currentQuestions[currentQuestionIndex];\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u35352 \u37636 \u32080 \u26524 \u65292 \u21253 \u21547 \u23436 \u25972 \u30340  questionData\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsLog.push(\{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionData: questionData,\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 userAnswer: clickedButton.textContent,\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 isCorrect: isCorrect\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u26681 \u25818 \u31572 \u26696 \u26159 \u21542 \u27491 \u30906 \u36914 \u34892 \u34389 \u29702 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (isCorrect) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 score++; // \uc0\u20998 \u25976 \u22686 \u21152 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 scoreDisplay.textContent = score; // \uc0\u26356 \u26032 \u39023 \u31034 \u30340 \u20998 \u25976 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 clickedButton.classList.add('correct'); // \uc0\u23559 \u40670 \u25802 \u30340 \u25353 \u37397 \u27161 \u35352 \u28858 \u27491 \u30906 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.textContent = '\uc0\u27491 \u30906 \u65281  \u55356 \u57225 '; // \u39023 \u31034 \u27491 \u30906 \u30340 \u22238 \u39243 \u35338 \u24687 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.classList.add('text-green-600'); // \uc0\u35373 \u23450 \u22238 \u39243 \u25991 \u23383 \u38991 \u33394 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \} else \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 clickedButton.classList.add('incorrect'); // \uc0\u23559 \u40670 \u25802 \u30340 \u25353 \u37397 \u27161 \u35352 \u28858 \u37679 \u35492 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.textContent = `\uc0\u37679 \u35492 \u12290  \u27491 \u30906 \u31572 \u26696 \u26159 \u65306 $\{correctAnswerText\}`; // \u39023 \u31034 \u37679 \u35492 \u30340 \u22238 \u39243 \u35338 \u24687 \u21450 \u27491 \u30906 \u31572 \u26696 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 feedbackText.classList.add('text-red-600'); // \uc0\u35373 \u23450 \u22238 \u39243 \u25991 \u23383 \u38991 \u33394 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// \uc0\u21516 \u26178 \u39640 \u20142 \u39023 \u31034 \u27491 \u30906 \u31572 \u26696 \u30340 \u25353 \u37397 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 buttons.forEach(button => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (button.textContent === correctAnswerText) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0button.classList.add('correct'); // \uc0\u29992 \u27491 \u30906 \u27171 \u24335 \u27161 \u35352 \u27491 \u30906 \u36984 \u38917 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// \uc0\u38656 \u35201 \u31227 \u38500 \u38928 \u35373 \u27171 \u24335 \u20197 \u36991 \u20813 \u34909 \u31361 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0button.classList.remove('bg-white', 'hover:bg-gray-100', 'text-gray-800', 'border-gray-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \});\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u39023 \u31034  "\u19979 \u19968 \u38988 " \u25353 \u37397 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 nextButton.classList.remove('hidden');\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 // "\uc0\u19979 \u19968 \u38988 " \u25353 \u37397 \u30340 \u40670 \u25802 \u20107 \u20214 \
+\'a0 \'a0 \'a0 \'a0 nextButton.addEventListener('click', () => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 currentQuestionIndex++; // \uc0\u21839 \u38988 \u32034 \u24341 \u22686 \u21152 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 loadQuestion(); // \uc0\u36617 \u20837 \u19979 \u19968 \u20491 \u21839 \u38988 \
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 \'a0 \'a0 // --- \uc0\u32080 \u26524 \u30059 \u38754 \u37007 \u36655  ---\
+\'a0 \'a0 \'a0 \'a0 /**\
+\'a0 \'a0 \'a0 \'a0 \'a0* \uc0\u32080 \u26463 \u36938 \u25138 \u20006 \u39023 \u31034 \u32080 \u26524 \u30059 \u38754 \
+\'a0 \'a0 \'a0 \'a0 \'a0*/\
+\'a0 \'a0 \'a0 \'a0 function endGame() \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 gameScreen.classList.add('hidden'); // \uc0\u38577 \u34255 \u36938 \u25138 \u30059 \u38754 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsScreen.classList.remove('hidden'); // \uc0\u39023 \u31034 \u32080 \u26524 \u30059 \u38754 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 finalScore.textContent = score; // \uc0\u39023 \u31034 \u26368 \u32066 \u24471 \u20998 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsDetails.innerHTML = ''; // \uc0\u28165 \u31354 \u19978 \u27425 \u30340 \u32080 \u26524 \u21015 \u34920 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u36941 \u27511 \u32080 \u26524 \u35352 \u37636 \u65292 \u29983 \u25104 \u20006 \u39023 \u31034 \u27599 \u20491 \u21839 \u38988 \u30340 \u32080 \u26524 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsLog.forEach((result, index) => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const div = document.createElement('div');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 div.classList.add('mb-3', 'pb-3', 'border-b', 'border-gray-200', 'last:border-b-0'); // \uc0\u35373 \u23450 \u27171 \u24335 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let questionDisplay = '';\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 let correctAnswerDisplay = '';\
+                let userAnswerDisplay = result.userAnswer;\
+\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (gameType === 'eng-chi') \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionDisplay = `<strong>Q$\{index + 1\}:</strong> $\{result.questionData.english\}`;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 correctAnswerDisplay = `\uc0\u27491 \u30906 : $\{result.questionData.chinese\}`;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \} else \{ // fill-blank\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // For fill-in-the-blank, show the sentence with the correct word/phrase in brackets\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 const sentenceWithAnswer = result.questionData.sentence.replace(result.questionData.english, `[$\{result.questionData.english\}]`);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 questionDisplay = `<strong>Q$\{index + 1\}:</strong> \uc0\u20363 \u21477 \u22635 \u31354  - "$\{sentenceWithAnswer\}"`;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // Show both English and Chinese for the correct answer\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 correctAnswerDisplay = `\uc0\u27491 \u30906 : $\{result.questionData.english\} ($\{result.questionData.chinese\})`;\
+                    // Show both English and Chinese for the user's answer if it matches a word in the data\
+                    const userAnswerData = vocabularyData.find(item => item.english === result.userAnswer || item.chinese === result.userAnswer);\
+                    if (userAnswerData) \{\
+                         userAnswerDisplay = `$\{userAnswerData.english\} ($\{userAnswerData.chinese\})`;\
+                    \} else \{\
+                         userAnswerDisplay = result.userAnswer; // Fallback to just the text if not found in data\
+                    \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u27083 \u24314 \u32080 \u26524 \u39023 \u31034 \u30340  HTML\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 div.innerHTML = `\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <p class="font-semibold text-sm text-gray-600">$\{questionDisplay\}</p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 <p class="text-sm $\{result.isCorrect ? 'text-green-700' : 'text-red-700'\}">\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \uc0\u20320 \u30340 \u31572 \u26696 : $\{userAnswerDisplay\} $\{result.isCorrect ? '\u10004 \u65039 ' : `\u10060  ($\{correctAnswerDisplay\})`\}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 </p>\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 `;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsDetails.appendChild(div); // \uc0\u23559 \u32080 \u26524 \u28155 \u21152 \u21040 \u21015 \u34920 \u20013 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \});\
+\'a0 \'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 \'a0 // "\uc0\u20877 \u29609 \u19968 \u27425 " \u25353 \u37397 \u30340 \u40670 \u25802 \u20107 \u20214 \
+\'a0 \'a0 \'a0 \'a0 restartButton.addEventListener('click', () => \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0// \uc0\u37325 \u32622 \u39006 \u22411 \u36984 \u25799 \u30340 \u35222 \u35258 \u25928 \u26524 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0typeEngChiButton.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0typeFillBlankButton.classList.remove('ring-2', 'ring-offset-2', 'ring-green-300');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0selectedTypeInput.value = ''; // \uc0\u28165 \u31354 \u36984 \u25799 \u30340 \u39006 \u22411 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0setupError.classList.add('hidden'); // \uc0\u38577 \u34255 \u37679 \u35492 \u35338 \u24687 \
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 // \uc0\u20999 \u25563 \u22238 \u35373 \u23450 \u30059 \u38754 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 resultsScreen.classList.add('hidden');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 setupScreen.classList.remove('hidden');\
+\'a0 \'a0 \'a0 \'a0 \});\
+\
+\'a0 \'a0 </script>\
+</body>\
+</html>\
+}
